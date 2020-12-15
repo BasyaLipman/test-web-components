@@ -5,14 +5,21 @@
  * It contains typing information for all components that exist in this project.
  */
 import { HTMLStencilElement, JSXBase } from "@stencil/core/internal";
+import { Option } from "./components/crb-select/crb-select";
 export namespace Components {
+    interface CrbSelect {
+        /**
+          * Options to display
+         */
+        "options": Option[];
+    }
     interface MyComponent {
         /**
           * The first name
          */
         "first": string;
         /**
-          * The last name
+          * The last name test
          */
         "last": string;
         /**
@@ -22,24 +29,37 @@ export namespace Components {
     }
 }
 declare global {
+    interface HTMLCrbSelectElement extends Components.CrbSelect, HTMLStencilElement {
+    }
+    var HTMLCrbSelectElement: {
+        prototype: HTMLCrbSelectElement;
+        new (): HTMLCrbSelectElement;
+    };
     interface HTMLMyComponentElement extends Components.MyComponent, HTMLStencilElement {
     }
     var HTMLMyComponentElement: {
         prototype: HTMLMyComponentElement;
-        new(): HTMLMyComponentElement;
+        new (): HTMLMyComponentElement;
     };
     interface HTMLElementTagNameMap {
+        "crb-select": HTMLCrbSelectElement;
         "my-component": HTMLMyComponentElement;
     }
 }
 declare namespace LocalJSX {
+    interface CrbSelect {
+        /**
+          * Options to display
+         */
+        "options": Option[];
+    }
     interface MyComponent {
         /**
           * The first name
          */
         "first"?: string;
         /**
-          * The last name
+          * The last name test
          */
         "last"?: string;
         /**
@@ -48,6 +68,7 @@ declare namespace LocalJSX {
         "middle"?: string;
     }
     interface IntrinsicElements {
+        "crb-select": CrbSelect;
         "my-component": MyComponent;
     }
 }
@@ -55,6 +76,7 @@ export { LocalJSX as JSX };
 declare module "@stencil/core" {
     export namespace JSX {
         interface IntrinsicElements {
+            "crb-select": LocalJSX.CrbSelect & JSXBase.HTMLAttributes<HTMLCrbSelectElement>;
             "my-component": LocalJSX.MyComponent & JSXBase.HTMLAttributes<HTMLMyComponentElement>;
         }
     }

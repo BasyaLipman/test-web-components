@@ -1,7 +1,9 @@
 import { Config } from '@stencil/core';
+import { reactOutputTarget } from '@stencil/react-output-target';
 
 export const config: Config = {
     namespace: 'stencil-poc',
+
     outputTargets: [
         {
             type: 'dist',
@@ -13,9 +15,9 @@ export const config: Config = {
         {
             type: 'docs-readme',
         },
-        {
-            type: 'www',
-            serviceWorker: null, // disable service workers
-        },
+        reactOutputTarget({
+            componentCorePackage: 'stencil-poc',
+            proxiesFile: '../cross-river-react-components/src/components.ts',
+          })
     ],
 };

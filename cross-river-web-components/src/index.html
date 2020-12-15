@@ -12,6 +12,16 @@
 
 <body>
     <my-component first="Stencil" last="'Don't call me a framework' JS"></my-component>
+    <crb-select />
 </body>
 
+<script>
+    const select = document.querySelector('crb-select')
+    select.options = [
+        {label: 'Test 1', value: 'Test 1'},
+        {label: 'Test 2', value: 'Test 2'},
+        {label: 'Test 3', value: 'Test 3'},
+        {label: 'Test 4', value: 'Test 4'}
+    ]
+</script>
 </html>
