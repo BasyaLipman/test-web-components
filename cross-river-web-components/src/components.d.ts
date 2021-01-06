@@ -7,7 +7,13 @@
 import { HTMLStencilElement, JSXBase } from "@stencil/core/internal";
 import { Option } from "./components/crb-select/crb-select";
 export namespace Components {
+    interface CrbInput {
+        "label": string;
+        "name": string;
+    }
     interface CrbSelect {
+        "label": string;
+        "name": string;
         /**
           * Options to display
          */
@@ -29,6 +35,12 @@ export namespace Components {
     }
 }
 declare global {
+    interface HTMLCrbInputElement extends Components.CrbInput, HTMLStencilElement {
+    }
+    var HTMLCrbInputElement: {
+        prototype: HTMLCrbInputElement;
+        new (): HTMLCrbInputElement;
+    };
     interface HTMLCrbSelectElement extends Components.CrbSelect, HTMLStencilElement {
     }
     var HTMLCrbSelectElement: {
@@ -42,12 +54,20 @@ declare global {
         new (): HTMLMyComponentElement;
     };
     interface HTMLElementTagNameMap {
+        "crb-input": HTMLCrbInputElement;
         "crb-select": HTMLCrbSelectElement;
         "my-component": HTMLMyComponentElement;
     }
 }
 declare namespace LocalJSX {
+    interface CrbInput {
+        "label"?: string;
+        "name"?: string;
+        "onInputChange"?: (event: CustomEvent<string>) => void;
+    }
     interface CrbSelect {
+        "label"?: string;
+        "name"?: string;
         /**
           * Options to display
          */
@@ -68,6 +88,7 @@ declare namespace LocalJSX {
         "middle"?: string;
     }
     interface IntrinsicElements {
+        "crb-input": CrbInput;
         "crb-select": CrbSelect;
         "my-component": MyComponent;
     }
@@ -76,6 +97,7 @@ export { LocalJSX as JSX };
 declare module "@stencil/core" {
     export namespace JSX {
         interface IntrinsicElements {
+            "crb-input": LocalJSX.CrbInput & JSXBase.HTMLAttributes<HTMLCrbInputElement>;
             "crb-select": LocalJSX.CrbSelect & JSXBase.HTMLAttributes<HTMLCrbSelectElement>;
             "my-component": LocalJSX.MyComponent & JSXBase.HTMLAttributes<HTMLMyComponentElement>;
         }

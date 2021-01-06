@@ -2,8 +2,8 @@ import { Config } from '@stencil/core';
 import { reactOutputTarget } from '@stencil/react-output-target';
 
 export const config: Config = {
-    namespace: 'stencil-poc',
-
+    namespace: 'cross-river-web-components',
+    globalStyle: 'src/global/app.css',
     outputTargets: [
         {
             type: 'dist',
@@ -16,7 +16,7 @@ export const config: Config = {
             type: 'docs-readme',
         },
         reactOutputTarget({
-            componentCorePackage: 'stencil-poc',
+            componentCorePackage: 'cross-river-web-components',
             proxiesFile: '../cross-river-react-components/src/components.ts',
           })
     ],

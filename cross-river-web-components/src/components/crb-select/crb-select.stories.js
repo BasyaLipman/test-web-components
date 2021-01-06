@@ -1,23 +1,34 @@
-import { storiesOf } from '@storybook/html';
-import readme from './readme.md';
+import { storiesOf } from '@storybook/html'
+import readme from './readme.md'
+
+function createOptions() {
+  const prefixes = ['Cross', 'River', 'Web', 'Components']
+  const options = []
+
+  prefixes.forEach(prefix => {
+    for (let i = 0; i < 19; i++) {
+      const label = `${prefix} Test ${i + 1}`
+      const value = label.toLowerCase()
+      options.push({ label, value })
+    }
+  })
+
+  return options
+}
 
 storiesOf('CRB Select', module).add(
-    'Default',
-    () => {
-        const select = document.createElement('crb-select');
+  'Default',
+  () => {
+    const select = document.createElement('crb-select')
+    select.options = createOptions()
+    select.label = 'A select input'
+    select.name = 'select_input_test'
 
-        select.options = [
-            { label: 'Test 1', value: 'Test 1' },
-            { label: 'Test 2', value: 'Test 2' },
-            { label: 'Test 3', value: 'Test 3' },
-            { label: 'Test 4', value: 'Test 4' },
-        ];
-
-        return select;
+    return select
+  },
+  {
+    notes: {
+      markdown: readme,
     },
-    {
-        notes: {
-            markdown: readme,
-        },
-    },
+  },
 )
