@@ -1,1 +1,0 @@
-import{p as e,b as t}from"./p-07c89b23.js";(()=>{const t=import.meta.url,a={};return""!==t&&(a.resourcesUrl=new URL(".",t).href),e(a)})().then((e=>t([["p-3f0a14c7",[[1,"crb-select",{options:[16],label:[1],name:[1],focused:[32],inputValue:[32]}],[1,"my-component",{first:[1],middle:[1],last:[1]}],[1,"crb-input",{label:[1],value:[1],name:[1],focused:[32]}]]]],e)));
