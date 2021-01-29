@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html dir="ltr" lang="en">
+
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=5.0" />
+    <title>Stencil Component Starter</title>
+
+    <script type="module" src="/build/stencil-poc.esm.js"></script>
+    <script nomodule src="/build/stencil-poc.js"></script>
+</head>
+
+<body>
+    <my-component first="Stencil" last="'Don't call me a framework' JS"></my-component>
+    <crb-select />
+</body>
+
+<script>
+    const select = document.querySelector('crb-select')
+    select.options = [
+        {label: 'Test 1', value: 'Test 1'},
+        {label: 'Test 2', value: 'Test 2'},
+        {label: 'Test 3', value: 'Test 3'},
+        {label: 'Test 4', value: 'Test 4'}
+    ]
+</script>
+</html>
