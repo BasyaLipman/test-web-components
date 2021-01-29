@@ -1,0 +1,49 @@
+{
+  "name": "cross-river-react-components",
+  "sideEffects": false,
+  "version": "0.0.3",
+  "private": true,
+  "description": "React specific wrapper for cross-river-web-components",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/ionic-team/ionic.git"
+  },
+  "scripts": {
+    "build": "npm run clean && npm run compile",
+    "clean": "rm -rf dist",
+    "compile": "npm run tsc",
+    "tsc": "tsc -p .",
+    "rollup": "rollup -c"
+  },
+  "main": "./dist/index.js",
+  "types": "./dist/index.d.ts",
+  "files": [
+    "dist/"
+  ],
+  "devDependencies": {
+    "@types/jest": "23.3.9",
+    "@types/node": "^14.14.11",
+    "@types/react": "16.7.6",
+    "@types/react-dom": "16.0.9",
+    "jest": "^23.0.0",
+    "jest-dom": "^3.0.2",
+    "np": "^3.1.0",
+    "react": "^16.7.0",
+    "react-dom": "^16.7.0",
+    "cross-river-web-components": "file:/Users/joelbond/Workspace/cross-river-web-components/cross-river-web-components",
+    "typescript": "^3.3.4000"
+  },
+  "peerDependencies": {
+    "react": "^16.7.0",
+    "react-dom": "^16.7.0",
+    "cross-river-web-components": "file:/Users/joelbond/Workspace/cross-river-web-components/cross-river-web-components"
+  },
+  "jest": {
+    "preset": "ts-jest",
+    "setupTestFrameworkScriptFile": "<rootDir>/jest.setup.js",
+    "testPathIgnorePatterns": [
+      "node_modules",
+      "dist"
+    ]
+  }
+}
