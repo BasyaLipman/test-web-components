@@ -32,6 +32,7 @@ export class CrbInput {
   }
 
   handleChange(event: any) {
+    console.log('change has occurred, value: ', event.target.value);
     this.inputChange.emit(event.target.value)
   }
 

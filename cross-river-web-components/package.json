@@ -1,6 +1,6 @@
 {
   "name": "cross-river-web-components",
-  "version": "0.0.14",
+  "version": "0.0.16",
   "description": "Reusable web components for Cross River",
   "main": "dist/index.cjs.js",
   "module": "dist/custom-elements/index.js",
