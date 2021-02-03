@@ -53,8 +53,8 @@ export class CrbSelect {
     return (
       <div class="container">
         <crb-input
-          label={this.label}
-          name={this.name}
+          // label={this.label}
+          // name={this.name}
           onFocus={this.handleInputFocus}
           onBlur={this.handleInputBlur}
           onInputChange={this.handleInputChange}

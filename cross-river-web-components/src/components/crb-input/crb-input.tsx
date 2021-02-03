@@ -11,14 +11,15 @@ import {
 @Component({
   tag: 'crb-input',
   styleUrl: 'crb-input.css',
-  shadow: true,
+  shadow: false,
 })
 export class CrbInput {
-  @Prop() name: string
+
   @Prop() label: string
+  @Prop() value: string
+  @Prop() name: string
 
   @State() focused = false
-  @State() value = ''
 
   @Event() inputChange: EventEmitter<string>
 
@@ -30,15 +31,12 @@ export class CrbInput {
     this.focused = false
   }
 
-  // TODO: WHY ANY?
   handleChange(event: any) {
-    const value  = event.target.value
-    this.value = value;
-    this.inputChange.emit(value)
+    this.inputChange.emit(event.target.value)
   }
 
   render() {
-    const inputId = `${this.name}-input`
+    const inputId = `${this.value}-input`
 
     return (
       <Host>
@@ -46,13 +44,14 @@ export class CrbInput {
           class={{
             container: true,
             focused: this.focused,
-            filled: this.value.length > 0,
+            filled: this.value && this.value.length > 0,
           }}
         >
           <label htmlFor={inputId}>{this.label}</label>
           <div class="placeholder">{this.label}</div>
           <input
             id={inputId}
+            name={this.name}
             onInput={event => this.handleChange(event)}
             onFocus={() => this.handleFocus()}
             onBlur={() => this.handleBlur()}

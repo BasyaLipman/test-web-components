@@ -10,6 +10,7 @@ export namespace Components {
     interface CrbInput {
         "label": string;
         "name": string;
+        "value": string;
     }
     interface CrbSelect {
         "label": string;
@@ -64,6 +65,7 @@ declare namespace LocalJSX {
         "label"?: string;
         "name"?: string;
         "onInputChange"?: (event: CustomEvent<string>) => void;
+        "value"?: string;
     }
     interface CrbSelect {
         "label"?: string;

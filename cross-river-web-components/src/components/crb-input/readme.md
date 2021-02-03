@@ -11,6 +11,7 @@
 | -------- | --------- | ----------- | -------- | ----------- |
 | `label`  | `label`   |             | `string` | `undefined` |
 | `name`   | `name`    |             | `string` | `undefined` |
+| `value`  | `value`   |             | `string` | `undefined` |
 
 
 ## Events
