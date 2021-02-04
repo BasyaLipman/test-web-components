@@ -6,7 +6,7 @@ import { ProxyCmp, proxyOutputs } from './angular-component-lib/utils';
 import { Components } from 'cross-river-web-components';
 
 import { CrbInput as ICrbInput } from 'cross-river-web-components/dist/types/components/crb-input/crb-input';
-export declare interface CrbInput extends Components.CrbInput { }
+export declare interface CrbInput extends Components.CrbInput {}
 @ProxyCmp({
   inputs: ['label', 'name', 'value']
 })
@@ -29,7 +29,7 @@ export class CrbInput {
 }
 
 
-export declare interface CrbSelect extends Components.CrbSelect { }
+export declare interface CrbSelect extends Components.CrbSelect {}
 @ProxyCmp({
   inputs: ['label', 'name', 'options']
 })
@@ -48,7 +48,7 @@ export class CrbSelect {
 }
 
 
-export declare interface MyComponent extends Components.MyComponent { }
+export declare interface MyComponent extends Components.MyComponent {}
 @ProxyCmp({
   inputs: ['first', 'last', 'middle']
 })

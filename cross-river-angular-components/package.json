@@ -1,6 +1,6 @@
 {
   "name": "cross-river-angular-components",
-  "version": "0.0.17",
+  "version": "0.0.19",
   "description": "",
   "license": "MIT",
   "repository": {
@@ -28,7 +28,7 @@
     "dist/"
   ],
   "dependencies": {
-    "cross-river-web-components": "0.0.17",
+    "cross-river-web-components": "0.0.19",
     "tslib": "^1.9.3"
   },
   "peerDependencies": {
